@@ -1,0 +1,29 @@
+{
+  "_comment": "通用兼容模板。Cursor 放到项目根 .cursor/mcp.json；优先复制同目录的 Windows/macOS/Linux 示例，只保留实际使用的服务器并替换全部占位路径。",
+  "mcpServers": {
+    "stata-builtin": {
+      "_comment": "仓库内置最小 Stata 服务器；先由 setup_env 导出 EEA_STATA_EXE，或创建 stata_mcp_config_local.py。",
+      "command": "/ABSOLUTE/PATH/TO/Empirical-Economics-Agent/.venv/bin/python",
+      "args": [
+        "/ABSOLUTE/PATH/TO/Empirical-Economics-Agent/scripts/mcp/stata_mcp_server.py"
+      ]
+    },
+    "stata-mcp": {
+      "_comment": "推荐的 MCP-for-Stata 手工配置；STATA_CLI 必须是 CLI 可执行文件，工作目录必须是仓库根。",
+      "command": "uvx",
+      "args": ["stata-mcp"],
+      "env": {
+        "STATA_CLI": "/ABSOLUTE/PATH/TO/STATA",
+        "STATA_MCP__CWD": "/ABSOLUTE/PATH/TO/Empirical-Economics-Agent"
+      }
+    },
+    "matlab": {
+      "_comment": "MathWorks 官方 MCP 服务器；matlab-root 是版本根目录且不含 bin。",
+      "command": "/ABSOLUTE/PATH/TO/matlab-mcp-server",
+      "args": [
+        "--matlab-root=/ABSOLUTE/PATH/TO/MATLAB",
+        "--initial-working-folder=/ABSOLUTE/PATH/TO/Empirical-Economics-Agent"
+      ]
+    }
+  }
+}

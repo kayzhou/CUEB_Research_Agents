@@ -1,0 +1,36 @@
+# a-share-multifactor-pricing 最终样本约束模板
+# M2 根据实际 CSMAR 字段和 Lead Author 决策补充/调整后再冻结。
+
+unique_key: [Stkcd, Yyyymm]
+
+variables:
+  Stkcd:
+    required: true
+    type: int
+    max_missing: 0
+
+  Yyyymm:
+    required: true
+    type: int
+    max_missing: 0
+    range: [190001, 210012]
+
+  ret:
+    required: true
+    type: float
+    max_missing: 0
+
+  size:
+    required: true
+    type: float
+    max_missing: 0
+
+  bm:
+    required: true
+    type: float
+    max_missing: 0
+
+  mom:
+    required: true
+    type: float
+    max_missing: 0

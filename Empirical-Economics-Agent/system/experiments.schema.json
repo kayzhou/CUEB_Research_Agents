@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Empirical experiment record",
+  "type": "object",
+  "required": ["exp_id", "timestamp", "project", "method", "specification", "outcome_code"],
+  "properties": {
+    "exp_id": {"type": "string", "pattern": "^EXP-[0-9]{3,}$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "project": {"type": "string"},
+    "method": {"type": "string"},
+    "specification": {"type": "string"},
+    "sample": {"type": "string"},
+    "coef": {"type": ["number", "null"]},
+    "std_error": {"type": ["number", "null"]},
+    "n_obs": {"type": ["integer", "null"]},
+    "diagnostics": {"type": "object"},
+    "specification_band": {"type": ["number", "null"]},
+    "claim_ids": {"type": "array", "items": {"type": "string"}},
+    "outputs": {"type": "array", "items": {"type": "string"}},
+    "outcome_code": {"enum": ["KEEP", "DISCARD", "FRAGILE", "FAILED"]},
+    "is_preferred": {"type": "boolean"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}

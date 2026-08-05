@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,bm,mathtools}
+\usepackage{booktabs,threeparttable}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\plim}{\operatorname*{plim}}
+\newcommand{\op}{o_p}
+\newcommand{\Op}{O_p}
+\newcommand{\W}{W_N}
+\newcommand{\SN}[1]{S_N(#1)}
+\newcommand{\thetahat}{\widehat{\theta}}
+\newcommand{\tauhat}{\widehat{\tau}}
+
+\title{QML Estimation of a Spatial Panel Model with an Unknown Structural Break}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper studies quasi-maximum likelihood estimation for a spatial panel model with an unknown structural break. The abstract should summarize the model, estimator, asymptotic results, and Monte Carlo findings. This template contains placeholders that must be verified before submission.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Spatial panel model; structural break; quasi-maximum likelihood; asymptotic theory; Monte Carlo simulation.\\
+\textbf{JEL Codes:} C13; C21; C23.
+
+\input{sections/01_introduction}
+\input{sections/02_model_likelihood}
+\input{sections/03_assumptions}
+\input{sections/04_asymptotic_properties}
+\input{sections/05_monte_carlo}
+\input{sections/06_conclusion}
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+
+\appendix
+\input{appendix/A_matrix_lemmas}
+\input{appendix/B_likelihood_expansion}
+\input{appendix/C_consistency}
+\input{appendix/D_break_rate}
+\input{appendix/E_asymptotic_normality}
+
+\end{document}
+
+

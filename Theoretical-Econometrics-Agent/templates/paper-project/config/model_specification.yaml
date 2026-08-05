@@ -1,0 +1,65 @@
+# Specialized default scaffold: spatial panel QML with one unknown break.
+# Gate 1 must replace all inapplicable spatial, break, regime, and parameter fields.
+project:
+  title: "Spatial Panel QML Model with Unknown Break"
+  status: "draft"
+
+indices:
+  cross_section: "i = 1,...,N"
+  time: "t = 1,...,T"
+
+variables:
+  dependent:
+    symbol: "y_t"
+    dimension: "N x 1"
+    description: "dependent variable vector"
+  regressors:
+    symbol: "X_t"
+    dimension: "N x k"
+    description: "exogenous regressors"
+  spatial_weights:
+    symbol: "W_N"
+    dimension: "N x N"
+    normalization: "row-normalized"
+    diagonal_zero: true
+
+break:
+  type: "single unknown time break"
+  true_break_symbol: "tau_0"
+  break_fraction_symbol: "rho_0 = tau_0 / T"
+  trim: 0.15
+  changing_parameters:
+    lambda: true
+    beta: true
+    gamma: true
+    variance: false
+
+model:
+  class: "Spatial Durbin Panel"
+  equation: "y_t = lambda_j W_N y_t + X_t beta_j + W_N X_t gamma_j + alpha + u_t"
+  spatial_multiplier: "S_N(lambda_j) = I_N - lambda_j W_N"
+  fixed_effects: "individual effects"
+
+parameters:
+  regime_1:
+    lambda: 0.3
+    beta: [1.0, 0.5]
+    gamma: [0.2, 0.1]
+    sigma2: 1.0
+  regime_2:
+    lambda: 0.5
+    beta: [1.0, 0.8]
+    gamma: [0.2, 0.3]
+    sigma2: 1.0
+
+estimation:
+  method: "QML"
+  break_search: "trimmed grid search"
+  standard_errors: "sandwich or Hessian; final choice requires proof"
+
+asymptotics:
+  N: "large"
+  T: "large"
+  relative_rate: "to be specified"
+
+

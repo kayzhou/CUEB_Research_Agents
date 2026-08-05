@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Theoretical-Econometrics-Agent local tool paths",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "python_env": { "type": "string" },
+    "r_bin": { "type": "string" },
+    "texlive_bin": { "type": "string" },
+    "matlab_root": { "type": "string" },
+    "stata_cli": { "type": "string" },
+    "octave_cli": { "type": "string" },
+    "pandoc_cli": { "type": "string" }
+  }
+}

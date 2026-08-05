@@ -1,0 +1,15 @@
+---
+description: Core routing and safety rules for the empirical economics research agent
+alwaysApply: true
+---
+
+# Empirical Economics Agent
+
+- Start by reading `ORCHESTRATOR.md` and `system/metadata.md`.
+- Select the target module, then read its `modules/MX-*/MODULE.md` and matching `.cursor/skills/mX-*/SKILL.md`.
+- Treat `paper/{project-slug}/` as the paper workspace; read the slug from `system/metadata.md`.
+- Stop at every human checkpoint and set the module state to `blocked_on_human`.
+- Never modify raw data, manually alter generated results, or type result numbers directly into paper prose.
+- Referee sessions are read-only: produce review reports; a separate Researcher session applies approved changes.
+- Cite paper-lib results only after checking the source PDF. If PDFs are unavailable, report the knowledge-base blocker.
+- Keep communication in Chinese except for English submission prose.

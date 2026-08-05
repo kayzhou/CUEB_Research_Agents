@@ -1,0 +1,20 @@
+{
+  "_comment": "macOS 原生示例。MATLAB MCP 二进制必须匹配 Apple Silicon arm64 或 Intel x86_64；文件名以官方 release 为准。",
+  "mcpServers": {
+    "matlab": {
+      "command": "/Users/YOUR_NAME/Tools/matlab-mcp-server",
+      "args": [
+        "--matlab-root=/Applications/MATLAB_R2026a.app",
+        "--initial-working-folder=/Users/YOUR_NAME/Research/Empirical-Economics-Agent"
+      ]
+    },
+    "stata-mcp": {
+      "command": "/Users/YOUR_NAME/Research/Empirical-Economics-Agent/.venv/bin/uvx",
+      "args": ["stata-mcp"],
+      "env": {
+        "STATA_CLI": "/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp",
+        "STATA_MCP__CWD": "/Users/YOUR_NAME/Research/Empirical-Economics-Agent"
+      }
+    }
+  }
+}

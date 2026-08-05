@@ -1,0 +1,11 @@
+{
+  "$schema": "./local-tools.schema.json",
+  "$comment": "复制为 local-tools.json 后填写本机绝对路径。空字符串表示自动从 PATH 或常见安装位置探测。不要提交 local-tools.json。",
+  "python_env": "",
+  "r_bin": "",
+  "texlive_bin": "",
+  "matlab_root": "",
+  "stata_cli": "",
+  "octave_cli": "",
+  "pandoc_cli": ""
+}

@@ -1,0 +1,23 @@
+{
+  "_schema": {
+    "说明": "声明-证据注册表。Researcher 根据结果与经 Lead Author 裁决的 claim 审计报告维护；Referee Mode C 只给建议，不修改本文件；validate_claims.py 校验。",
+    "status_取值": [
+      "unsupported            （仅有主张，无理论或实证支撑）",
+      "theoretical            （有理论论证，尚无实证）",
+      "empirical_pending      （实证进行中，evidence 已登记）",
+      "empirically_supported  （实证支撑，preferred_evidence_id 指向首选规格）",
+      "fragile                （有支撑但对规格敏感，写作时必须弱化措辞）",
+      "refuted                （被证据推翻，正文不得使用）"
+    ],
+    "claim_字段": {
+      "id": "CLAIM-XXX",
+      "text": "声明原文（一句话）",
+      "risk_level": "高 / 中 / 低",
+      "status": "见 status_取值",
+      "evidence": [{"exp_id": "EXP-XXX", "path": "results/tables/{project-slug}/tab_xxx.tex", "note": "对应表列"}],
+      "preferred_evidence_id": "EXP-XXX"
+    }
+  },
+  "project": "a-share-multifactor-pricing",
+  "claims": []
+}
