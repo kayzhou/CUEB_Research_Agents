@@ -1,0 +1,45 @@
+\section{Model and Quasi-Likelihood}\label{sec:model-likelihood}
+
+Let $i=1,\ldots,N$ index cross-sectional units and $t=1,\ldots,T$ index time. Let $y_t\in\R^N$ denote the dependent variable vector, $X_t\in\R^{N\times k}$ denote regressors, and $\W\in\R^{N\times N}$ denote a spatial weights matrix.
+
+Consider the model
+\begin{equation}
+ y_t = \lambda_j \W y_t + X_t\beta_j + \W X_t\gamma_j + \alpha + u_t,
+ \qquad t\in\mathcal{T}_j(\tau_0),\quad j=1,2.
+ \label{eq:model-baseline}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \SN{\lambda_j}y_t = X_t\beta_j + \W X_t\gamma_j + \alpha + u_t,
+ \qquad \SN{\lambda_j}=I_N-\lambda_j\W.
+ \label{eq:transformed-model}
+\end{equation}
+
+The true break date is $\tau_0$, with break fraction $\rho_0=\tau_0/T$. For a candidate break date $\tau$, define $\mathcal{T}_1(\tau)=\{1,\ldots,\tau\}$ and $\mathcal{T}_2(\tau)=\{\tau+1,\ldots,T\}$.
+
+For $t\in\mathcal{T}_j(\tau)$, define residuals
+\begin{equation}
+ e_{jt}(\theta_j)=\SN{\lambda_j}y_t-X_t\beta_j-\W X_t\gamma_j-\alpha_j.
+ \label{eq:residual}
+\end{equation}
+
+The Gaussian quasi-log-likelihood is
+\begin{equation}
+\ell_{NT}(\theta_1,\theta_2,\tau)
+=\sum_{j=1}^2\left[
+T_j(\tau)\log|\SN{\lambda_j}|
+-\frac{NT_j(\tau)}{2}\log(2\pi\sigma_j^2)
+-\frac{1}{2\sigma_j^2}\sum_{t\in\mathcal{T}_j(\tau)}e_{jt}(\theta_j)'e_{jt}(\theta_j)
+\right].
+\label{eq:loglik}
+\end{equation}
+
+The QML estimator is
+\begin{equation}
+(\widehat\theta_1,\widehat\theta_2,\widehat\tau)
+=\arg\max_{\theta_1,\theta_2\in\Theta,\,\tau\in\mathcal{T}_\epsilon}
+\ell_{NT}(\theta_1,\theta_2,\tau).
+\label{eq:qml-estimator}
+\end{equation}
+
+

@@ -1,0 +1,25 @@
+\section{Asymptotic Properties}\label{sec:asymptotic-properties}
+
+This section states candidate results. Each result must be verified against the final assumptions and proof details.
+
+\begin{theorem}[Consistency]\label{thm:consistency}
+Under Assumptions~\ref{ass:weights}--\ref{ass:break} and the uniform convergence conditions stated in Appendix~\ref{app:likelihood-expansion}, the QML estimator is consistent:
+\[
+\widehat\tau/T \to_p \rho_0,
+\qquad
+\widehat\theta_j \to_p \theta_{j0},\quad j=1,2.
+\]
+\end{theorem}
+
+\begin{theorem}[Break-date rate: candidate]\label{thm:break-rate}
+Under additional identification and stochastic equicontinuity conditions, the break-date estimator converges at a rate determined by the objective drift around $\tau_0$ and the likelihood fluctuation. The exact rate must be derived for the selected asymptotic regime.
+\end{theorem}
+
+\begin{theorem}[Asymptotic normality: candidate]\label{thm:asymptotic-normality}
+Suppose the score satisfies a central limit theorem with effective information rate $A_{NT}$ and the Hessian converges to a nonsingular matrix. Then the regular parameter estimator satisfies
+\[
+A_{NT}^{1/2}(\widehat\theta-\theta_0)\Rightarrow \mathcal{N}(0,J^{-1}\Omega J^{-1}).
+\]
+\end{theorem}
+
+

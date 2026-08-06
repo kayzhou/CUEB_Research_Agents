@@ -1,0 +1,16 @@
+# Theoretical-Econometrics-Agent 依赖真源
+# 安装：python -m pip install -r requirements.txt
+# 用途路由见 ENVIRONMENT.md §二.1
+
+numpy>=1.26          # 矩阵运算、数值反例检查（M4）、模拟备胎（M5）
+scipy>=1.11          # 优化（QML 目标函数）、稀疏矩阵、统计分布
+pandas>=2.0          # 模拟结果汇总、文献矩阵处理
+statsmodels>=0.14    # 参照实现与检验
+linearmodels>=6.0    # 面板模型参照估计与交叉验证
+matplotlib>=3.8      # 模拟图形（profile likelihood、覆盖率曲线）
+seaborn>=0.13        # 诊断图与结果可视化
+PyYAML>=6.0          # model_specification.yaml / simulation_design.yaml 解析
+python-docx>=1.1     # LaTeX → docx 导出（M6/M7 给导师批注）
+pypdf>=5.0           # 文献 PDF 文本抽取（扫描件仍需 OCR）
+reportlab>=4.0       # PDF 报告生成
+mcp>=1.28.1,<2       # MCP 1.x API；2.x 为未经本框架验证的破坏性升级

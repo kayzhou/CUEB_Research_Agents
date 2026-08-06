@@ -1,0 +1,20 @@
+{
+  "_comment": "Linux 原生示例。复制为项目根 .cursor/mcp.json，只保留已安装且有合法授权的服务器。",
+  "mcpServers": {
+    "matlab": {
+      "command": "/home/YOUR_NAME/Tools/matlab-mcp-server-linux-x64",
+      "args": [
+        "--matlab-root=/usr/local/MATLAB/R2026a",
+        "--initial-working-folder=/home/YOUR_NAME/Research/Empirical-Economics-Agent"
+      ]
+    },
+    "stata-mcp": {
+      "command": "/home/YOUR_NAME/Research/Empirical-Economics-Agent/.venv/bin/uvx",
+      "args": ["stata-mcp"],
+      "env": {
+        "STATA_CLI": "/usr/local/stata19/stata-mp",
+        "STATA_MCP__CWD": "/home/YOUR_NAME/Research/Empirical-Economics-Agent"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# 依赖清单
+#
+# 本文件记录每个输出文件的生成脚本、输入数据和上游依赖。
+# 渐进采用：新增稳定脚本时追加条目，临时探索性脚本不需要登记。
+#
+# 用法：
+#   python code/utils/dependency_check.py --changed code/clean/01_xxx.py
+#   python code/utils/dependency_check.py --list
+
+outputs: {}
+  # === 示例条目（使用时取消注释并替换为实际内容）===
+
+  # data/processed/csmar_stock_daily.parquet:
+  #   script: code/clean/01_csmar_stock.py
+  #   inputs:
+  #     - data/raw/csmar/stock_daily/*.dta
+  #   upstream: []
+
+  # data/final/analysis_sample.dta:
+  #   script: code/build/07_final_validate.do
+  #   inputs:
+  #     - data/processed/csmar_stock_daily.parquet
+  #     - data/processed/csmar_financial.parquet
+  #   upstream:
+  #     - code/clean/01_csmar_stock.py
+  #     - code/clean/02_csmar_financial.py
+  #     - code/build/01_merge_core.do
+  #     - code/build/05_construct_variables.do
+
+  # results/tables/{project-slug}/tab_main.tex:
+  #   script: code/analysis/{project-slug}/02_baseline.do
+  #   inputs:
+  #     - data/final/analysis_sample.dta
+  #   upstream:
+  #     - code/build/07_final_validate.do

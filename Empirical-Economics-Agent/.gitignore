@@ -1,0 +1,48 @@
+# ── 数据（原始数据不入库，通过 data/raw/README.md 登记来源） ──
+data/raw/*
+data/processed/*
+data/final/*
+!data/raw/README.md
+!data/processed/.gitkeep
+!data/final/codebook.md
+!data/final/schema.yaml
+
+# ── 结果（由脚本再生，不入库；如需入库可按 paper 白名单放开） ──
+results/logs/*
+results/tables/*
+results/figures/*
+!results/logs/.gitkeep
+!results/tables/.gitkeep
+!results/figures/.gitkeep
+
+# ── 本机配置 ──
+*.local.py
+*_local.py
+.cursor/mcp.json
+config/local-tools.json
+
+# ── 本机 Python 虚拟环境（不可跨机器复制） ──
+.venv/
+venv/
+
+# ── 知识库 PDF（体积大，另行同步） ──
+paper-lib/**/*.pdf
+
+# ── docx 交换目录（非论文真源） ──
+paper/exports/*.docx
+
+# ── 系统与缓存 ──
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.log
+*.aux
+*.bbl
+*.blg
+*.synctex.gz

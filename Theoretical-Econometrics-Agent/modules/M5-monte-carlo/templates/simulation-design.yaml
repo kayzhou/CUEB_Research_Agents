@@ -1,0 +1,40 @@
+# Specialized example for the spatial panel break scaffold.
+# Other models must replace the DGP, grids, parameters, metrics, and model-specific fields.
+simulation:
+  debug_replications: 50
+  final_replications: 1000
+  seed: 20260622
+  n_grid: [50, 100]
+  t_grid: [40, 80]
+  trim: 0.15
+
+spatial_weights:
+  designs: ["ring", "knn"]
+  row_normalize: true
+  k_neighbors: 4
+
+parameters:
+  lambda_pre: 0.3
+  lambda_post: 0.5
+  beta_pre: [1.0, 0.5]
+  beta_post: [1.0, 0.8]
+  gamma_pre: [0.2, 0.1]
+  gamma_post: [0.2, 0.3]
+  sigma_pre: 1.0
+  sigma_post: 1.0
+  break_fraction: 0.5
+
+metrics:
+  - bias
+  - rmse
+  - empirical_sd
+  - average_se
+  - coverage_probability_95
+  - break_accuracy
+  - convergence_failure_rate
+
+output:
+  raw_estimates: "results/raw/mc_estimates.csv"
+  summary_tables: "results/tables/mc_summary.csv"
+  figures: "results/figures"
+

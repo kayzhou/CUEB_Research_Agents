@@ -1,0 +1,23 @@
+# Core data and estimation
+numpy
+pandas
+scipy
+statsmodels
+linearmodels
+scikit-learn
+pyarrow
+
+# Figures and documents
+matplotlib
+seaborn
+python-docx
+reportlab
+lxml
+
+# Utilities and integrations
+PyYAML
+requests
+mcp
+
+# Build tool used by source-installed R packages such as nloptr
+cmake

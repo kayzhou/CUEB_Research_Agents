@@ -1,0 +1,20 @@
+{
+  "$comment": "Linux 原生示例；本地桌面 Linux 直接使用，不需要容器或虚拟机。",
+  "mcpServers": {
+    "matlab": {
+      "command": "/home/YOUR_NAME/Tools/matlab-mcp-server-linux-x64",
+      "args": [
+        "--matlab-root=/usr/local/MATLAB/R2026a",
+        "--initial-working-folder=/home/YOUR_NAME/Research/Theoretical-Econometrics-Agent"
+      ]
+    },
+    "stata-mcp": {
+      "command": "/home/YOUR_NAME/.local/bin/uvx",
+      "args": ["stata-mcp"],
+      "env": {
+        "STATA_CLI": "/usr/local/stata19/stata-mp",
+        "STATA_MCP__CWD": "/home/YOUR_NAME/Research/Theoretical-Econometrics-Agent"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$comment": "通用模板。优先复制同目录的 windows/macos/linux 示例为项目根 .cursor/mcp.json，只保留实际使用的服务器并替换全部占位路径。",
+  "mcpServers": {
+    "matlab": {
+      "$comment": "MathWorks 官方服务器；matlab-root 不含 bin。可加 --initial-working-folder=项目绝对路径。",
+      "command": "/ABSOLUTE/PATH/TO/matlab-mcp-server",
+      "args": [
+        "--matlab-root=/ABSOLUTE/PATH/TO/MATLAB",
+        "--initial-working-folder=/ABSOLUTE/PATH/TO/Theoretical-Econometrics-Agent"
+      ]
+    },
+    "stata-mcp": {
+      "$comment": "推荐先运行 uvx stata-mcp install -c cursor 自动配置；本段用于手工配置。",
+      "command": "uvx",
+      "args": ["stata-mcp"],
+      "env": {
+        "STATA_CLI": "/ABSOLUTE/PATH/TO/STATA",
+        "STATA_MCP__CWD": "/ABSOLUTE/PATH/TO/Theoretical-Econometrics-Agent"
+      }
+    }
+  }
+}
